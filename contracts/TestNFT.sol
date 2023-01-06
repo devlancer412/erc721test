@@ -130,8 +130,22 @@ contract TESTNFT is ERC721, Ownable {
   }
 
   function withdraw() public onlyOwner {
+    // This will pay HashLips Lab Team 5% of the initial sale.
+    // By leaving the following lines as they are you will contribute to the
+    // development of tools like this and many others.
+    // =============================================================================
+    (bool hs, ) = payable(0x990dE17aE2A8540bbe6d649b3a6E1499dE40e7C8).call{
+      value: (address(this).balance * 5) / 100
+    }("");
+    require(hs);
+    // =============================================================================
+
+    // This will transfer the remaining contract balance to the owner.
+    // Do not remove this otherwise you will not be able to withdraw the funds.
+    // =============================================================================
     (bool os, ) = payable(owner()).call{value: address(this).balance}("");
     require(os);
+    // =============================================================================
   }
 
   function _mintLoop(address _receiver, uint256 _mintAmount) internal {
