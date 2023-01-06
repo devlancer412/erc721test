@@ -22,6 +22,7 @@
     "script:avax_test": "npx hardhat run --network avax_test",
     "deploy": "yarn deploy:localhost",
     "deploy:localhost": "npx hardhat deploy --network localhost",
+    "deploy:mainnet": "npx hardhat deploy --network mainnet",
     "deploy:goerli": "npx hardhat deploy --network goerli",
     "deploy:polygon": "npx hardhat deploy --network polygon",
     "deploy:avax": "npx hardhat deploy --network avax",

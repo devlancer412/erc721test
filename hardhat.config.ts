@@ -40,6 +40,12 @@ const config: HardhatUserConfig = {
       accounts: accounts("localhost"),
       tags: ["local", "test"],
     },
+    mainnet: {
+      accounts: accounts("mainnet"),
+      chainId: 1,
+      url: node_url("mainnet"),
+      tags: ["prod", "live"],
+    },
     avax: {
       accounts: accounts("avalanche"),
       chainId: 43114,
