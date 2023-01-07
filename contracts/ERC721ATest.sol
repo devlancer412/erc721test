@@ -154,4 +154,8 @@ contract ERC721ATest is ERC721A, Ownable {
   function setRevealed(bool _state) public onlyOwner {
     revealed = _state;
   }
+
+  function setUriSuffix(string memory _uriSuffix) public onlyOwner {
+    uriSuffix = _uriSuffix;
+  }
 }
