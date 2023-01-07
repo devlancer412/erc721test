@@ -150,4 +150,8 @@ contract ERC721ATest is ERC721A, Ownable {
         ? string(abi.encodePacked(currentBaseURI, _tokenId.toString(), uriSuffix))
         : "";
   }
+
+  function setRevealed(bool _state) public onlyOwner {
+    revealed = _state;
+  }
 }
