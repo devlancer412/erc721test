@@ -34,6 +34,7 @@
     "console:mainnet": "npx hardhat console --network mainnet",
     "console:avax": "npx hardhat console --network avax",
     "console:avax_test": "npx hardhat console --network avax_test",
+    "verify:mainnet": "npx hardhat upload:batch --network mainnet --contracts",
     "verify:goerli": "npx hardhat upload:batch --network goerli --contracts",
     "verify:polygon": "npx hardhat upload:batch --network polygon --contracts",
     "verify:avax": "npx hardhat upload:batch --network avax --contracts",
