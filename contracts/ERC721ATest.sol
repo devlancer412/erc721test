@@ -76,7 +76,14 @@ contract ERC721ATest is ERC721A, Ownable {
     require(saleIsActive, "Sale must be active to mint tokens");
     require(amount + minted <= walletLimit, "Exceeds wallet limit");
     require(ts + amount <= MAX_SUPPLY, "Purchase would exceed max tokens");
-    require(currentPrice * amount == msg.value, "Value sent is not correct");
+
+    uint256 requireFunds = 0;
+    if (minted > 0) {
+      requireFunds = currentPrice * amount;
+    } else {
+      requireFunds = currentPrice * (amount - 1);
+    }
+    require(requireFunds == msg.value, "Value sent is not correct");
 
     _safeMint(msg.sender, amount);
   }
